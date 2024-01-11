@@ -141,6 +141,8 @@ class DB
     }
 }
 
+$Poster = New DB('poster');
+
 function dd($array)
 {
     echo "<pre>";
