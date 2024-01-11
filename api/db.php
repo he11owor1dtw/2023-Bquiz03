@@ -142,6 +142,8 @@ class DB
 }
 
 $Poster = New DB('poster');
+$Movie = new DB('movie');
+
 
 function dd($array)
 {
