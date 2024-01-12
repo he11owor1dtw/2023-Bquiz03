@@ -29,7 +29,6 @@
 </style>
 
 <div style="width:100%;height:415px;overflow:auto">
-
   <?php
   $movies = $Movie->all(" order by rank");
   foreach ($movies as $idx => $movie) {
@@ -39,7 +38,7 @@
       <div>
         <img src="./img/<?= $movie['poster']; ?>" style="width:100%">
       </div>
-      <div style="margin:auto;text-align:center">
+      <div style="margin: auto;text-align:center">
         分級:<img src='./icon/03C0<?= $movie['level']; ?>.png' style='width:25px'>
       </div>
       <div>
@@ -55,9 +54,7 @@
           </div>
         </div>
         <div>
-          <button class='show-btn' data-id="<?= $movie['id']; ?>">
-            <?= ($movie['sh'] == 1) ? '顯示' : '隱藏'; ?>
-          </button>
+          <button class='show-btn' data-id="<?= $movie['id']; ?>"><?= ($movie['sh'] == 1) ? '顯示' : '隱蔵'; ?></button>
           <button class='sw-btn' data-id="<?= $movie['id']; ?>" data-sw="<?= ($idx !== 0) ? $movies[$idx - 1]['id'] : $movie['id']; ?>">往上</button>
           <button class='sw-btn' data-id="<?= $movie['id']; ?>" data-sw="<?= ((count($movies) - 1) != $idx) ? $movies[$idx + 1]['id'] : $movie['id']; ?>">往下</button>
           <button class="edit-btn" data-id="<?= $movie['id']; ?>">編輯電影</button>
@@ -90,10 +87,6 @@
               } */
     })
   })
-
-  $(".show-btn").on("click", function() {
-
-  })
   $(".sw-btn").on("click", function() {
     let id = $(this).data('id');
     let sw = $(this).data('sw');
@@ -107,7 +100,8 @@
     })
   })
   $(".edit-btn").on("click", function() {
-
+    let id = $(this).data('id');
+    location.href = `?do=edit_movie&id=${id}`;
   })
   $(".del-btn").on("click", function() {
     let id = $(this).data('id');
