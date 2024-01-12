@@ -152,7 +152,7 @@ input:focus {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	min-height: 100px;
+	min-height: 360px;
 	padding: 10px;
 }
 

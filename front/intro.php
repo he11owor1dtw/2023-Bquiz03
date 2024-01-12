@@ -1,5 +1,4 @@
-﻿<?php $movie = $Movie->find($_GET['id']); ?>
-
+﻿﻿<?php $movie = $Movie->find($_GET['id']); ?>
 <div class="tab rb" style="width:87%;">
   <div style="background:#FFF; width:100%; color:#333; text-align:left">
     <video src="img/<?= $movie['trailer']; ?>" width="300px" height="250px" controls="" style="float:right;"></video>
@@ -19,14 +18,8 @@
         <?= $movie['intro']; ?>
       </p>
     </font>
-    <table width="100%" border="0">
-      <tbody>
-        <tr>
-          <td align="center">
-            <input type="button" value="院線片清單" onclick="location.href='index.php'">
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="ct">
+      <button onclick="location.href='index.php'">院線片清單</button>
+    </div>
   </div>
 </div>
