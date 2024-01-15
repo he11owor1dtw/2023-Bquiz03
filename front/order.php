@@ -1,12 +1,12 @@
 <h3 class="ct">線上訂票</h3>
 <div class="order">
-  <div>
+  <div style="text-align: left;">
     <label>電影：</label>
     <select name="movie" id="movie">
     </select>
   </div>
   <div>
-    <label>日期：</label>
+    <label style="text-align: left;">日期：</label>
     <select name="date" id="date"></select>
   </div>
   <div>
@@ -21,11 +21,14 @@
 <script>
   getMovies();
 
+  $("#movie").on("change", function() {
+    getDates($("#movie").val())
+  })
+
   function getMovies() {
     $.get("./api/get_movies.php", (movies) => {
       $("#movie").html(movies);
-      let id = $("#movie").val();
-      getDates(id)
+      getDates($("#movie").val())
     })
   }
 
