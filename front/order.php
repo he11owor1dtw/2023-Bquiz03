@@ -25,6 +25,10 @@
     getDates($("#movie").val())
   })
 
+  $("#date").on("change", function() {
+    getSessions($("#movie").val(), $("#date").val())
+  })
+
   function getMovies() {
     $.get("./api/get_movies.php", (movies) => {
       $("#movie").html(movies);
@@ -36,6 +40,7 @@
     $.get("./api/get_dates.php", {
       id
     }, (dates) => {
+      console.log(dates)
       $("#date").html(dates);
       let movie = $("#movie").val()
       let date = $("#date").val()
