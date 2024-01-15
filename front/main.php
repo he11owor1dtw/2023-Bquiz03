@@ -146,8 +146,6 @@
 
   }
 
-
-
   let p = 0;
 
   $(".left,.right").on("click", function() {
@@ -167,6 +165,17 @@
     $(".btn").animate({
       right: 90 * p
     })
+
+    $(".btns").hover(
+      function() {
+        clearInterval(timer)
+      },
+      function() {
+        timer = setInterval(() => {
+          slide()
+        }, 3000)
+      }
+    )
   })
 </script>
 
