@@ -88,6 +88,7 @@ $session = $_GET['session']
         movie: '<?= $movie['name']; ?>',
         date: '<?= $date; ?>',
         session: '<?= $session; ?>',
+        qt: seats.length,
         seats
       },
       (no) => {
